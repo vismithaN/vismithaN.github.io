@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background: url(24996586.v1.jpg);
+    background: url(background3.png);
     background-size: cover;
     
     font-family: sans-serif;
@@ -17,7 +17,7 @@ down=105;
     
     color: #fff;
     top: 50%;
-    left: 70%;
+    left: 50%;
     position: absolute;
     transform: translate(-50%,-50%);
     box-sizing: border-box;
