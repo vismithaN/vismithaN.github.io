@@ -24,8 +24,8 @@
                 <div class="inputBox">
                     <label><font color=#03a9f4 size=2px >Team Member1</font></label>
                     <br>
-                    <select id="member1" name="entry.419075328" required  >
-                        <option value=""></option>
+                    <select id="member1" name="entry.419075328"  >
+                        <option value="default" selected=""></option>
                     </select>
         
                 </div>
@@ -35,7 +35,7 @@
                     <label><font color=#03a9f4 size=2px>Team Member2</font></label>
                     <br>
                     <select id="member2" name="entry.1246828446" >
-                        <option value=""></option>
+                        <option value="default" selected=""></option>
                     </select>
                 </div>
 
@@ -44,7 +44,7 @@
                     <br>
                     <select id="member3" name="entry.354891133" >
                         
-                        <option value=""></option>
+                        <option value="default" selected=""></option>
                     </select>
                 </div>
 
@@ -53,7 +53,7 @@
                     <br>
                     <select id="member4" name="entry.197766581" >
                         
-                        <option value=""></option>
+                        <option value="default" selected=""></option>
                     </select>
                 </div>
 
@@ -181,7 +181,43 @@ function postToGoogle() {
                 var field5 = $("#member3").val();
                 var field6 = $("#member4").val();
         
-        
+                var count=0;
+                
+                var v=[field3,field4,field5,field6];
+                for(var k=0; k< v.length; k++)
+                {
+                    if(v[k]!="default")
+                    {
+                        count++;
+                    }
+                }
+                
+                
+                if(field2<count)
+                {
+                    alert("Your team size is just "+field2+". Overfitting bro!!");
+                    return false;
+                }
+                else if(field2>count)
+                {
+                    alert("Please mention all "+field2+" teammate(s)");
+                    return false;
+                }
+                
+                for(var k=0; k< v.length; k++)
+                {
+                    if(v[k]!="default")
+                    {
+                        for(var m=k+1; m< v.length; m++)
+                        {
+                            if(v[k]===v[m])
+                            {
+                                alert("Dont repeat the names of your teammates");
+                                return false;
+                            }
+                        }
+                    }
+                }
         
 
 
@@ -207,7 +243,7 @@ function postToGoogle() {
             }
 </script>
 
-<div style=" position: relative;
+<div style=" position: fixed;
     top: 100%;
     right: 0%;"><font color="white" size=2>Report bugs@ vismitha944@gmail.com</font></div>
 </body>
