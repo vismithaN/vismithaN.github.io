@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="inputBox">
-                    <input id="size" type="number" min="1" max="4" name="entry.702813080" required="" >
+                    <input id="size" type="number" min="1" max="5" name="entry.702813080" required="" >
                     <label>Team Size</label>
                 </div>
 
@@ -56,7 +56,22 @@
                         <option value="default" selected=""></option>
                     </select>
                 </div>
+                <div class="inputBox">
+                <label><font color=#03a9f4 size=2px>Team Member5</font></label>
+                    <br>
+                    <select id="member5" name="entry.905010849" >
+                        
+                        <option value="default" selected=""></option>
+                    </select>
+                </div>
 
+                <div class="inputBox">
+
+                <input id="feature" type="text" name="entry.1047976225" required="" >
+                <label><font color=#03a9f4 size=2px>Special feature</font></label>
+                    
+                </div>
+            
   <button id="send" type="submit" class="common_btn">Submit</button>
  </form>          
 </div>
@@ -156,7 +171,7 @@ var arr = ["IMPANA N(1RV16IS017)","K J BHOOMIKA(1RV16IS020)",
 "PRANAV SHASTRI(1RV18IS409)",
 "RAJESH B(1RV18IS410)",
 "SURAKSHA S S(1RV18IS411)"];
-var a1=["member1","member2","member3","member4"];
+var a1=["member1","member2","member3","member4","member5"];
 for(var j=0;j<a1.length;j++)
 {
     var select1 = document.getElementById(a1[j]);
@@ -180,10 +195,12 @@ function postToGoogle() {
                 var field4 = $("#member2").val();
                 var field5 = $("#member3").val();
                 var field6 = $("#member4").val();
+                var field7 = $("#member5").val();
+                var field8 = $("#feature").val();
         
                 var count=0;
                 
-                var v=[field3,field4,field5,field6];
+                var v=[field3,field4,field5,field6,field7];
                 for(var k=0; k< v.length; k++)
                 {
                     if(v[k]!="default")
@@ -224,8 +241,8 @@ function postToGoogle() {
         
   
                 $.ajax({
-                    url: "https://docs.google.com/forms/d/e/1FAIpQLScIrodmCzIJTuLm2nyP3VcocUVaerM5j2DXXg1ryFR9KwWX9w/formResponse?",
-          data: {"entry.1219444897": field1, "entry.702813080": field2, "entry.419075328": field3, "entry.1246828446": field4, "entry.354891133":field5, "entry.197766581": field6 },
+                    url: "https://docs.google.com/forms/d/e/1FAIpQLSerfL32ruJBfXLgp4BVt33IixD4WvGbYwP6pNNwb_atSUjYPw/formResponse?",
+          data: {"entry.1219444897": field1, "entry.702813080": field2, "entry.419075328": field3, "entry.1246828446": field4, "entry.354891133":field5, "entry.197766581": field6,"entry.905010849":field7,"entry.1047976225":field8 },
                     type: "POST",
                     dataType: "xml",
                     success: function(d)
