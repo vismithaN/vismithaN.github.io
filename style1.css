@@ -30,8 +30,8 @@ down=105;
     height: 50px;
     border-radius: 50%;
     position: absolute;
-    top: 40%;
-    left: calc(50% - 50px);
+    top: 10%;
+    left: 50%;
 }
 
 
